@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: khaled
+  labels:
+    app: app 
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  minReadySeconds: 20 
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app 
+    spec:
+      containers:
+      - name: app-deployment
+        image: harbor.dev.afsmtddso.com/khaled-devsecops/app:64edffa-1d6f44f 
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - secretRef:
+           name: db-secret
