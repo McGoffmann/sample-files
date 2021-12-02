@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: db-service
-  namespace: khaled
+  namespace: kawwad
 spec:
-  selector:
-    app: db 
   type: ClusterIP
+  selector:
+    app: db
   ports:
     - name: "5432"
       port: 5432
