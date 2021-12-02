@@ -42,4 +42,3 @@ try:
 ## Build DB when image doesn't exist or something goes wrong ##
 except:
     print('true')
-
