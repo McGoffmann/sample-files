@@ -19,10 +19,10 @@ spec:
         app: db
     spec:
       containers:
-      - name: db-deployment
-        image: harbor.dev.afsmtddso.com/khaled-harbor-project/db:d706e8e-24f853d
-        ports:
-        - containerPort: 5432
-        envFrom:
+      - envFrom:
         - secretRef:
             name: db-secret
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/kawwad-harbor-project/db:971c881-8150286
+        ports:
+        - containerPort: 5432
