@@ -48,4 +48,3 @@ while scanStatus != 'Success':
         time.sleep(4)
 
 print(json.dumps(scanOverviewResult['summary'], indent=4))
-
